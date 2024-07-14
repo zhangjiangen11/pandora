@@ -2,4 +2,6 @@
 class_name Items
 
 
-const COPPER_ORE = "14"
+const APPLE = "9"
+const SHIELD = "49"
+const COPPER_ORE = "50"

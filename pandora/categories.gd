@@ -11,13 +11,13 @@ const MOCK__REQUIRED_FOR_TESTING__ = "54"
 const NPCS = "2"
 
 
+class ItemsArmoryCategories:
+	const SHIELDS = "8"
+
+
 class ItemsCategories:
 	const ARMORY = "3"
 	const TOOLS = "4"
 	const ORES = "13"
-
-
-class ArmoryCategories:
-	const SHIELDS = "8"
 
 
