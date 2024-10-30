@@ -25,6 +25,8 @@ concurrency:
 
 jobs:
   unit-tests:
+    timeout-minutes: 5
+
     runs-on: ubuntu-latest
     permissions:
       actions: write
@@ -37,12 +39,16 @@ jobs:
       fail-fast: false
       max-parallel: 10
       matrix:
-        godot-version: ["4.2.2"]
+        godot-version: ["4.2.2", "4.3"]
 
     name: "🤖 CI on Godot ${{ matrix.godot-version }}"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Set Runner Tracking ID to prevent orphan processes
+        run: |
+          export RUNNER_TRACKING_ID=""
 
       - name: Run GDUnit4 tests
         uses: MikeSchulze/gdUnit4-action@v1.1.1
